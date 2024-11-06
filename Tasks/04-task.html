@@ -31,16 +31,24 @@
         document.addEventListener("keydown", function (e) {
             switch (e.code) {
                 case "ArrowLeft":
+                    if (e.shiftKey) { distance *= 2; };
                     moveLeft(div, distance);
+                    distance = 10;
                     break;
                 case "ArrowRight":
+                    if (e.shiftKey) { distance *= 2; };
                     moveRight(div, distance);
+                    distance = 10;
                     break;
                 case "ArrowUp":
+                    if (e.shiftKey) { distance *= 2; };
                     moveUp(div, distance);
+                    distance = 10;
                     break;
                 case "ArrowDown":
+                    if (e.shiftKey) { distance *= 2; };
                     moveDown(div, distance);
+                    distance = 10;
                     break;
             }
         });

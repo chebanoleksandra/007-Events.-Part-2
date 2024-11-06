@@ -35,22 +35,38 @@
         function changeColor(number) {
             divList[number - 1].style.border = "2px solid red";
         }
+        function reset(number)
+        {
+            divList[number - 1].style.border = "none";
+        }
         document.addEventListener("keydown", function (e) {
             switch (e.code) {
                 case "Digit1":
                 case "Numpad1":
                     num = 1;
                     changeColor(num);
+                    reset(2);
+                    reset(3);
                     break;
                 case "Digit2":
                 case "Numpad2":
                     num = 2;
                     changeColor(num);
+                    reset(1);
+                    reset(3);
                     break;
                 case "Digit3":
                 case "Numpad3":
                     num = 3;
                     changeColor(num);
+                    reset(1);
+                    reset(2);
+                case "KeyA":
+                    if (e.shiftKey) {
+                        changeColor(1);
+                        changeColor(2);
+                        changeColor(3);
+                    }
                     break;
             }
         });
